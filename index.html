@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Greeting Widget</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: transparent;
+  }
+  .greeting-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+  }
+  #greeting {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #2d2d2d;
+    text-align: center;
+    letter-spacing: -0.5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="greeting-wrapper">
+  <div id="greeting">Loading...</div>
+</div>
+
+<script>
+  const NAMA = "Fathan";
+
+  function getGreeting() {
+    const hour = new Date().getHours();
+    let salam;
+
+    if (hour >= 4 && hour < 11) {
+      salam = "Good Morning";
+    } else if (hour >= 11 && hour < 15) {
+      salam = "Good Afternoon";
+    } else if (hour >= 15 && hour < 18) {
+      salam = "Good Evening";
+    } else {
+      salam = "Good Night";
+    }
+
+    return salam + ", " + NAMA;
+  }
+
+  document.getElementById("greeting").textContent = getGreeting();
+</script>
+
+</body>
+</html>
